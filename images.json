@@ -1,0 +1,20 @@
+{
+    "images": [
+        {
+            "title": "south-node.svg",
+            "fileName": "art01.png"
+        },
+        {
+            "title": "north-node.svg",
+            "fileName": "art02.png"
+        },
+        {
+            "title": "prophet.svg",
+            "fileName": "art03.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "fileName": "art04.png"
+        }
+    ]
+}
