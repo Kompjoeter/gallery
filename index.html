@@ -8,68 +8,34 @@
   <title>Kompjoeter</title>
   <link rel="stylesheet" href="main.css">
   <script>
+    var images;
 
-
+    function fillGallery() {
+      for (let i = 0; i < images.length; i++) {
+        let gallery = document.getElementById('gallery-0');
+        let imageContainer = document.createElement('div');
+        imageContainer.className = 'image';
+        let image = document.createElement('img');
+        image.src = images[i].fileName;
+        imageContainer.appendChild(image);
+        gallery.appendChild(imageContainer);
+      }
+    }
 
     function load() {
-      let images;
-
-      function galleryFill() {
-        // Loop through all images and create image DOM element.
-        // For every image DOM check if current column has least or 0 images.
-        // If true, add image to current column, break out of inner-loop.
-        // If not, move to next column and check again.
-        let gallery = document.getElementById('gallery-0');
-        let columns = gallery.querySelectorAll('.column');
-
-        for (let i = 0; i < images.length; i++) {
-          for (let j = 0; j < columns.length; j++) {
-            let columnNumber = j;
-            let imagesColumnCurrent = document.getElementById(`column-${columnNumber}`);
-            let imagesColumnPrev = document.getElementById(`column-${columnNumber - 1 >= 0 ? columnNumber - 1 : columns.length - 1}`);
-
-            if (imagesColumnCurrent.children.length == 0 || imagesColumnCurrent.children.length < imagesColumnPrev.children.length) {
-              let imageContainer = document.createElement('div');
-              imageContainer.className = 'image';
-              let image = document.createElement('img');
-              image.src = images[i].fileName;
-              imageContainer.appendChild(image);
-              imagesColumnCurrent.appendChild(imageContainer);
-              break;
-            }
-          }
-        }
-      }
-
-      function galleryCreate(data) {
-        images = data.images;
-        let gallery = document.getElementById('gallery-0');
-        let columns = gallery.querySelectorAll('.column');
-        let columnsMax = 4;
-
-        for (let i = columns.length; i < columnsMax; i++) {
-          let column = document.createElement('div');
-          column.className = 'column';
-          column.id = `column-${i}`;
-          gallery.append(column);
-        }
-
-        galleryFill();
-      }
-
-      function setImages(data) {
-
-      }
       fetch('https://raw.githubusercontent.com/Kompjoeter/gallery/main/images.json')
         .then(response => response.json())
-        .then(data => galleryCreate(data));
+        .then(data => { images = data.images; fillGallery() });
     }
   </script>
 </head>
 
 <body onload="load()">
-  <div class="gallery" id="gallery-0">
+  <div class="gallery-container">
+    <div class="gallery" id="gallery-0">
+    </div>
   </div>
+
 </body>
 
 </html>
