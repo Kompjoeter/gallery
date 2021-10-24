@@ -14,18 +14,11 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: flex-start;
-  gap: 1%;
 }
-<<<<<<< HEAD
 
-
-=======
-
-
->>>>>>> b80b72fd45d45fb1dbc7296698cc9e53252cc8fa
 .gallery .image {
-  width: 99%;
-  margin-top: .5%;
+  width: 98%;
+  margin: .5%;
 }
 
 .image img {
@@ -39,7 +32,7 @@
   }
 
   .gallery .image{
-    width: 49%;
+    width: 48%;
   }
 }
 
@@ -50,6 +43,6 @@
   }
 
   .gallery .image {
-    width: 32%;
+    width: 31.33%;
   }
 }
