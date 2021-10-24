@@ -16,8 +16,13 @@
   justify-content: flex-start;
   gap: 1%;
 }
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> b80b72fd45d45fb1dbc7296698cc9e53252cc8fa
 .gallery .image {
   width: 99%;
   margin-top: .5%;
@@ -29,6 +34,10 @@
     
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (min-width: 600px) {
+  .gallery-container {
+    width: 512px;
+  }
+
   .gallery .image{
     width: 49%;
   }
@@ -36,6 +45,10 @@
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (min-width: 800px) {
+  .gallery-container {
+    width: 768px;
+  }
+
   .gallery .image {
     width: 32%;
   }
