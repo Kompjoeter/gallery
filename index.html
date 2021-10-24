@@ -10,23 +10,74 @@
   <script>
     var images;
 
+    window.onresize = galleryCreate
+
+    function imageToColumn(imageIndex, columnId) {
+      let column = document.getElementById(columnId);
+      let imageContainer = document.createElement('div');
+      imageContainer.className = 'image';
+      let image = document.createElement('img');
+      image.src = images[imageIndex].fileName;
+      imageContainer.appendChild(image);
+      column.appendChild(imageContainer);
+    }
+
     function galleryFill() {
+      let gallery = document.getElementById('gallery-0');
+      let columns = gallery.querySelectorAll('.column');
       for (let i = 0; i < images.length; i++) {
-        let gallery = document.getElementById('gallery-0');
-        let imageContainer = document.createElement('div');
-        imageContainer.className = 'image';
-        let image = document.createElement('img');
-        image.src = images[i].fileName;
-        imageContainer.appendChild(image);
-        gallery.appendChild(imageContainer);
+        let columnCurrent = columns[0];
+        let columnPrev;
+        let columnTarget = 'column-0';
+        for (let j = 1; j < columns.length; j++) {
+          columnPrev = columnCurrent;
+          columnCurrent = columns[j];
+          if (columnCurrent.children.length < columnPrev.children.length) {
+            columnTarget = `column-${j}`
+            break;
+          }
+        }
+        imageToColumn(i, columnTarget);
       }
     }
+
+    function galleryResize() {
+      let gallery = document.getElementById('gallery-0');
+      let width = window.innerWidth;
+      if (width < 600) {
+        return 1;
+      }
+      return 4;
+    }
+
+    function galleryCreate() {
+      let gallery = document.getElementById('gallery-0');
+      let columns = gallery.querySelectorAll('.column');
+      let columnsAmount = galleryResize();
+
+      columns.forEach(element => {
+        element.remove();
+      });
+
+      for (let i = 0; i < columnsAmount; i++) {
+        let column = document.createElement('div');
+        column.className = 'column';
+        column.id = `column-${i}`;
+        gallery.append(column);
+      }
+
+      //galleryResize();
+      galleryFill();
+    }
+
 
     function load() {
       fetch('https://raw.githubusercontent.com/Kompjoeter/gallery/main/images.json')
         .then(response => response.json())
-        .then(data => { images = data.images; galleryFill() });
+        .then(data => { images = data.images; galleryCreate(data) });
     }
+
+
   </script>
 </head>
 
