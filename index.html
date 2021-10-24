@@ -45,8 +45,13 @@
       let gallery = document.getElementById('gallery-0');
       let width = window.innerWidth;
       if (width < 600) {
+        gallery.className = 'gallery single-column';
         return 1;
+      } else if (width < 800) {
+        gallery.className = 'gallery double-column';
+        return 2;
       }
+      gallery.className = 'gallery quarter-column';
       return 4;
     }
 
@@ -66,7 +71,6 @@
         gallery.append(column);
       }
 
-      //galleryResize();
       galleryFill();
     }
 

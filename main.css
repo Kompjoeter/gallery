@@ -4,11 +4,20 @@
   padding: 0 4px;
 }
 
-.column {
+.gallery.single-column .column {
     flex: 100%;
     max-width: 100%;
   }
 
+.gallery.double-column .column{
+  flex: 50%;
+  max-width: 50%;
+}
+
+.gallery.quarter-column .column {
+  flex: 25%;
+  max-width: 25%;
+}
 
 .column img {
   margin-top: 8px;
@@ -19,13 +28,3 @@
 .image {
   margin: 0 4px;
 }
-
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (min-width: 601px) {
-  .column {
-    flex: 25%;
-    max-width: 25%;
-  }
-}
-  
