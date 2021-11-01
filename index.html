@@ -18,6 +18,7 @@
       imageContainer.className = 'image';
       let image = document.createElement('img');
       image.src = images[imageIndex].source;
+      image.loading = 'lazy';
       imageContainer.appendChild(image);
       column.appendChild(imageContainer);
     }
@@ -70,7 +71,6 @@
         column.id = `column-${i}`;
         gallery.append(column);
       }
-
       galleryFill();
     }
 
