@@ -31,6 +31,70 @@
         {
             "title": "authority.svg",
             "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art09.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art10.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art11.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art12.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art13.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art14.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art15.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art16.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art17.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art18.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art19.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art20.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art21.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art22.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art23.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art24.png"
         }
     ]
 }
