@@ -1,24 +1,260 @@
 {
     "images": [
         {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
             "title": "south-node.svg",
-            "fileName": "art01.png"
+            "source": "art03.png"
         },
         {
             "title": "north-node.svg",
-            "fileName": "art02.png"
-        },
-        {
-            "title": "prophet.svg",
-            "fileName": "art03.png"
+            "source": "art04.png"
         },
         {
             "title": "blue-screen.svg",
-            "fileName": "art04.png"
+            "source": "art05.png"
         },
         {
             "title": "cold-dead-hand.svg",
-            "fileName": "art05.png"
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
+        },
+        {
+            "title": "ghost.svg",
+            "source": "art01.png"
+        },
+        {
+            "title": "mies.svg",
+            "source": "art02.png"
+        },
+        {
+            "title": "south-node.svg",
+            "source": "art03.png"
+        },
+        {
+            "title": "north-node.svg",
+            "source": "art04.png"
+        },
+        {
+            "title": "blue-screen.svg",
+            "source": "art05.png"
+        },
+        {
+            "title": "cold-dead-hand.svg",
+            "source": "art06.png"
+        },
+        {
+            "title": "prophet.svg",
+            "source": "art07.png"
+        },
+        {
+            "title": "authority.svg",
+            "source": "art08.png"
         }
     ]
 }

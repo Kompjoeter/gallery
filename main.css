@@ -1,55 +1,99 @@
-* {
-  margin: 0;
-  padding: 0;
+:root {
+	--image-height: 400px; 
 }
 
-.gallery-container {
-  width: fit-content;
-  margin: auto;
+body {
+	background-color: #383838;
 }
 
 .gallery {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 8px;
+	margin: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+	.gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.gallery {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	.gallery {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.image-container {
+	width: 100%;
+	height: var(--image-height);
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay */
+
+#overlay-container {
+  display: none;
+}
+
+#overlay-container.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .85);
+}
+
+.button-close {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  color: lightgray;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+}
+
+.button-close:hover {
+  background-color: rgba(0, 0, 0, .85);
+  cursor: pointer;
+}
+
+.overlay-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  justify-content: flex-start;
-  gap: 1%;
-}
-<<<<<<< HEAD
-
-
-=======
-
-
->>>>>>> b80b72fd45d45fb1dbc7296698cc9e53252cc8fa
-.gallery .image {
-  width: 99%;
-  margin-top: .5%;
+  height: 100%;
 }
 
-.image img {
-  width: 100%;
-}
-    
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (min-width: 600px) {
-  .gallery-container {
-    width: 512px;
-  }
-
-  .gallery .image{
-    width: 49%;
-  }
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (min-width: 800px) {
-  .gallery-container {
-    width: 768px;
-  }
-
-  .gallery .image {
-    width: 32%;
-  }
+.overlay-image img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px black solid;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  object-fit: contain;
 }
