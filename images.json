@@ -5,15 +5,15 @@
             "source": "art01.png"
         },
         {
-            "title": "mies.svg",
+            "title": "south-node.svg",
             "source": "art02.png"
         },
         {
-            "title": "south-node.svg",
+            "title": "north-node.svg",
             "source": "art03.png"
         },
         {
-            "title": "north-node.svg",
+            "title": "node-not-found.svg",
             "source": "art04.png"
         },
         {
@@ -29,232 +29,12 @@
             "source": "art07.png"
         },
         {
-            "title": "authority.svg",
-            "source": "art08.png"
-        },
-        {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
             "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
-            "title": "authority.svg",
             "source": "art08.png"
         },
         {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
-            "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
             "title": "authority.svg",
-            "source": "art08.png"
-        },
-        {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
-            "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
-            "title": "authority.svg",
-            "source": "art08.png"
-        },
-        {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
-            "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
-            "title": "authority.svg",
-            "source": "art08.png"
-        },
-        {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
-            "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
-            "title": "authority.svg",
-            "source": "art08.png"
-        },
-        {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
-            "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
-            "title": "authority.svg",
-            "source": "art08.png"
-        },
-        {
-            "title": "ghost.svg",
-            "source": "art01.png"
-        },
-        {
-            "title": "mies.svg",
-            "source": "art02.png"
-        },
-        {
-            "title": "south-node.svg",
-            "source": "art03.png"
-        },
-        {
-            "title": "north-node.svg",
-            "source": "art04.png"
-        },
-        {
-            "title": "blue-screen.svg",
-            "source": "art05.png"
-        },
-        {
-            "title": "cold-dead-hand.svg",
-            "source": "art06.png"
-        },
-        {
-            "title": "prophet.svg",
-            "source": "art07.png"
-        },
-        {
-            "title": "authority.svg",
-            "source": "art08.png"
+            "source": "art09.png"
         }
     ]
 }
