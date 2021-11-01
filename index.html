@@ -76,7 +76,7 @@
 
 
     function load() {
-      fetch('https://raw.githubusercontent.com/Kompjoeter/gallery/main/images.json')
+      fetch('https://raw.githubusercontent.com/Kompjoeter/gallery/development/images.json')
         .then(response => response.json())
         .then(data => { images = data.images; galleryCreate(data) });
     }
