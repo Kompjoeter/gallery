@@ -5,90 +5,107 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kompjoeter</title>
+  <title>Document</title>
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script>
+
+    window.onresize = galleryResize;
     var images;
+    var overlayIsActive = false;
+    var activeOverlayImage = 0;
 
-    window.onresize = galleryCreate
-
-    function imageToColumn(imageIndex, columnId) {
-      let column = document.getElementById(columnId);
-      let imageContainer = document.createElement('div');
-      imageContainer.className = 'image';
-      let image = document.createElement('img');
-      image.src = images[imageIndex].source;
-      image.loading = 'lazy';
-      imageContainer.appendChild(image);
-      column.appendChild(imageContainer);
+    function overlayChangeHandler(key) {
+      if (overlayIsActive) {
+        console.log(activeOverlayImage);
+        const imgActive = document.getElementById('img-active');
+        if (key.keyCode == '37') {
+          // if key left
+          let imgNext = document.getElementById(`img-${activeOverlayImage - 1}`);
+          if (imgNext) {
+            activeOverlayImage = parseInt(imgNext.id.substring(4));
+            imgActive.src = images[activeOverlayImage].source;
+          } else {
+            activeOverlayImage = parseInt(images.length - 1);
+            imgNext = document.getElementById(`img-${activeOverlayImage}`)
+            imgActive.src = images[activeOverlayImage].source;
+          }
+        } else if (key.keyCode == '39') {
+          // if key right
+          let imgNext = document.getElementById(`img-${activeOverlayImage + 1}`);
+          if (imgNext) {
+            activeOverlayImage = parseInt(imgNext.id.substring(4));
+            imgActive.src = images[activeOverlayImage].source;
+          } else {
+            activeOverlayImage = 0;
+            imgNext = document.getElementById(`img-${activeOverlayImage}`)
+            imgActive.src = images[activeOverlayImage].source;
+          }
+        } else if (key.keyCode == '27') {
+          overlayClose();
+        }
+      }
     }
 
-    function galleryFill() {
-      let gallery = document.getElementById('gallery-0');
-      let columns = gallery.querySelectorAll('.column');
-      for (let i = 0; i < images.length; i++) {
-        let columnCurrent = columns[0];
-        let columnPrev;
-        let columnTarget = 'column-0';
-        for (let j = 1; j < columns.length; j++) {
-          columnPrev = columnCurrent;
-          columnCurrent = columns[j];
-          if (columnCurrent.children.length < columnPrev.children.length) {
-            columnTarget = `column-${j}`
-            break;
-          }
-        }
-        imageToColumn(i, columnTarget);
-      }
+    function overlayClose() {
+      overlayIsActive = false;
+      let overlayContainer = document.getElementById('overlay-container');
+      overlayContainer.classList.remove('active');
     }
 
     function galleryResize() {
-      let gallery = document.getElementById('gallery-0');
-      let width = window.innerWidth;
-      if (width < 600) {
-        gallery.className = 'gallery single-column';
-        return 1;
-      } else if (width < 800) {
-        gallery.className = 'gallery double-column';
-        return 2;
+      const image = document.getElementById(`img-0`);
+      if (image) {
+        document.documentElement.style.setProperty('--image-height', (`${window.getComputedStyle(image).width}`));
       }
-      gallery.className = 'gallery quarter-column';
-      return 4;
     }
 
-    function galleryCreate() {
-      let gallery = document.getElementById('gallery-0');
-      let columns = gallery.querySelectorAll('.column');
-      let columnsAmount = galleryResize();
+    function galleryFill(galleryDomId) {
+      const gallery = document.getElementById(galleryDomId);
+      for (let i = 0; i < images.length; i++) {
+        let container = document.createElement('div');
+        container.className = 'image-container';
+        let image = document.createElement('div');
+        image.className = 'image';
+        image.id = `img-${i}`;
+        image.style.backgroundImage = 'url(' + images[i].source + ')';
 
-      columns.forEach(element => {
-        element.remove();
-      });
+        image.addEventListener('click', () => {
+          let overlayContainer = document.getElementById('overlay-container');
+          let selectedImage = document.getElementById('img-active');
+          selectedImage.src = images[i].source;
+          overlayContainer.classList.add('active');
+          overlayIsActive = true;
+          activeOverlayImage = parseInt(image.id.substring(4));
+        })
 
-      for (let i = 0; i < columnsAmount; i++) {
-        let column = document.createElement('div');
-        column.className = 'column';
-        column.id = `column-${i}`;
-        gallery.append(column);
+        container.appendChild(image)
+        gallery.appendChild(container);
       }
-      galleryFill();
     }
-
 
     function load() {
+      document.addEventListener('keyup', overlayChangeHandler);
+
       fetch('https://raw.githubusercontent.com/Kompjoeter/gallery/development/images.json')
         .then(response => response.json())
-        .then(data => { images = data.images; galleryCreate(data) });
+        .then(data => { images = data.images; galleryFill('gallery-0'); galleryResize(); });
     }
-
-
   </script>
 </head>
 
 <body onload="load()">
   <div class="gallery-container">
-    <div class="gallery" id="gallery-0">
+    <div id="overlay-container">
+      <div class="button-close" onclick="overlayClose()">
+        <span class="material-icons">close</span>
+      </div>
+      <div class="overlay-image"> <img id="img-active" src="art01.png">
+      </div>
     </div>
+  </div>
+  </div>
+  <div class="gallery" id="gallery-0"></div>
   </div>
 
 </body>
