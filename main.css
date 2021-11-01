@@ -19,6 +19,11 @@
   max-width: 50%;
 }
 
+.gallery.third-column .column {
+  flex: 33.33%;
+  max-width: 33.33%;
+}
+
 .gallery.quarter-column .column {
   flex: 25%;
   max-width: 25%;
