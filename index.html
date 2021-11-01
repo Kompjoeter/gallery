@@ -29,7 +29,6 @@
             imgNext = document.getElementById(`img${activeOverlayImage}`)
             imgActive.src = imgNext.src;
           }
-          overlayChange()
         } else if (key.keyCode == '39') {
           // if key right
           let imgNext = document.getElementById(`img${parseInt(activeOverlayImage) + 1}`);
@@ -41,15 +40,11 @@
             imgNext = document.getElementById(`img${activeOverlayImage}`)
             imgActive.src = imgNext.src;
           }
-          overlayChange();
         } else if (key.keyCode == '27') {
           overlayClose();
         }
         console.log(activeOverlayImage);
       }
-    }
-
-    function overlayChange(imgIndex) {
     }
 
     function overlayClose() {
@@ -103,9 +98,12 @@
       if (width < 600) {
         gallery.className = 'gallery single-column';
         return 1;
-      } else if (width < 800) {
+      } else if (width < 1000) {
         gallery.className = 'gallery double-column';
         return 2;
+      } else if (width < 1400) {
+        gallery.className = 'gallery third-column';
+        return 3;
       }
       gallery.className = 'gallery quarter-column';
       return 4;
