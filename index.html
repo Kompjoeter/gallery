@@ -7,18 +7,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kompjoeter</title>
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script>
     var images;
+    var overlayIsActive = false;
+    var activeOverlayImage = 0;
 
     window.onresize = galleryCreate
+
+    function overlayChangeHandler(key) {
+      if (overlayIsActive) {
+        const imgActive = document.getElementById('img-active');
+        if (key.keyCode == '37') {
+          // if key left
+          let imgNext = document.getElementById(`img${parseInt(activeOverlayImage) - 1}`);
+          if (imgNext) {
+            activeOverlayImage = imgNext.id.substring(3);
+            imgActive.src = imgNext.src;
+          } else {
+            activeOverlayImage = images.length - 1;
+            imgNext = document.getElementById(`img${activeOverlayImage}`)
+            imgActive.src = imgNext.src;
+          }
+          overlayChange()
+        } else if (key.keyCode == '39') {
+          // if key right
+          let imgNext = document.getElementById(`img${parseInt(activeOverlayImage) + 1}`);
+          if (imgNext) {
+            activeOverlayImage = imgNext.id.substring(3);
+            imgActive.src = imgNext.src;
+          } else {
+            activeOverlayImage = 0;
+            imgNext = document.getElementById(`img${activeOverlayImage}`)
+            imgActive.src = imgNext.src;
+          }
+          overlayChange();
+        }
+        console.log(activeOverlayImage);
+      }
+    }
+
+    function overlayChange(imgIndex) {
+    }
+
+    function overlayClose() {
+      overlayIsActive = false;
+      let overlayContainer = document.getElementById('overlay-container');
+      overlayContainer.classList.remove('active');
+    }
 
     function imageToColumn(imageIndex, columnId) {
       let column = document.getElementById(columnId);
       let imageContainer = document.createElement('div');
       imageContainer.className = 'image';
       let image = document.createElement('img');
+      image.id = `img${imageIndex}`;
       image.src = images[imageIndex].source;
       image.loading = 'lazy';
+      image.addEventListener('click', () => {
+        let overlayContainer = document.getElementById('overlay-container');
+        let selectedImage = document.getElementById('img-active');
+        selectedImage.src = image.src;
+        overlayContainer.classList.add('active');
+        overlayIsActive = true;
+        activeOverlayImage = image.id.substring(3);
+      })
       imageContainer.appendChild(image);
       column.appendChild(imageContainer);
     }
@@ -76,6 +129,8 @@
 
 
     function load() {
+      document.addEventListener('keyup', overlayChangeHandler);
+
       fetch('https://raw.githubusercontent.com/Kompjoeter/gallery/development/images.json')
         .then(response => response.json())
         .then(data => { images = data.images; galleryCreate(data) });
@@ -86,7 +141,16 @@
 </head>
 
 <body onload="load()">
+
   <div class="gallery-container">
+    <div id="overlay-container">
+      <div class="button-close" onclick="overlayClose()">
+        <span class="material-icons">close</span>
+      </div>
+      <div class="overlay-image">
+        <img id="img-active" src="art01.png">
+      </div>
+    </div>
     <div class="gallery" id="gallery-0">
     </div>
   </div>
